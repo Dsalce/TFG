@@ -1,0 +1,48 @@
+﻿<Window x:Class="Supermarket.View.ShoppingList"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:k="http://schemas.microsoft.com/kinect/2013" 
+      
+        Title="ShoppingList"  Height="862.1" Width="685.821" Loaded="loadWindow" Background="#FF459E9A" WindowStartupLocation="CenterScreen"   >
+
+    <Grid HorizontalAlignment="Left" Width="679" >
+        <k:KinectRegion x:Name="kinectRegion" HorizontalAlignment="Left" Width="677"  >
+
+            <Grid Width="673">
+
+
+                <k:KinectScrollViewer x:Name="menu" VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Disabled" HorizontalAlignment="Left" VerticalAlignment="Top" Width="663" Height="582" Margin="10,0,0,0"  >
+
+                    <StackPanel   Orientation="Horizontal" VerticalAlignment="Top"  HorizontalAlignment="Left"  Height="Auto" Width="663"  >
+                        <StackPanel x:Name="Col1"  Orientation="Vertical" VerticalAlignment="Top"  HorizontalAlignment="Left"  Height="Auto" Width="Auto" >
+
+                        </StackPanel>
+
+                        <StackPanel x:Name="Col2" Orientation="Vertical"  VerticalAlignment="Top"  HorizontalAlignment="Left"  Height="Auto" Width="Auto"  >
+
+
+                        </StackPanel>
+                        <StackPanel  x:Name="Col3" Orientation="Vertical"  VerticalAlignment="Top"  HorizontalAlignment="Left" Height="Auto" Width="Auto"  >
+
+                        </StackPanel>
+
+
+
+                    </StackPanel>
+
+
+                </k:KinectScrollViewer>
+                <k:KinectSensorChooserUI Name="sensorChooserUi"   Margin="215,0,256,753" Grid.Row="0"/>
+                <k:KinectTileButton Height="124" Grid.Row="0"  Width="Auto" Background="#FFE44E4E" Margin="31,696,428,0"  VerticalAlignment="Top" Content="ACEPTAR" FontFamily="Segoe WP Black" FontWeight="Bold" Click="acceptEvent" >
+
+                </k:KinectTileButton>
+                <k:KinectTileButton Height="Auto"  Grid.Column="0" Grid.Row="0"  Margin="439,696,10,10" Width="Auto" Background="#FFE44E4E"  Content="CANCELAR" FontFamily="Segoe WP Black" FontWeight="Bold" Click="CancelEvent">
+
+                </k:KinectTileButton>
+            </Grid>
+
+        </k:KinectRegion>
+    </Grid>
+
+
+</Window>

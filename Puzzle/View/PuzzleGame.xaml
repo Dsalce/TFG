@@ -1,0 +1,64 @@
+﻿<Window x:Class="puzzle.View.PuzzleGame"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:k="http://schemas.microsoft.com/kinect/2013" 
+         xmlns:puz="clr-namespace:puzzle.View" 
+         xmlns:cron="clr-namespace:ViewCommon;assembly=WpfApplication1" 
+        Title="MainWindow" 
+          WindowStyle="ThreeDBorderWindow" WindowState="Maximized"
+          WindowStartupLocation="Manual" Top="0" Left="0" Height="958" Width="1300" VerticalAlignment="Top" HorizontalAlignment="Left" Loaded="loadWindow" >
+    <Grid>
+        <Label x:Name="nameUser" Margin="10,10,1189,869"/>
+        <k:KinectRegion x:Name="kinectRegion">
+
+            <Grid Background="BurlyWood" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="137*" />
+                    <RowDefinition Height="790*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <k:KinectSensorChooserUI Name="sensorChooserUi" HorizontalAlignment="Center"  Margin="518,10,566,34" Width="208" Grid.Row="0"/>
+                <Grid x:Name="dock"  Grid.Row="0"  Width="Auto" VerticalAlignment="Top" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+
+
+
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+
+
+
+
+                    <k:KinectTileButton x:Name="fotoShow" HorizontalAlignment="Left"  Height="Auto"  IsEnabled="False"  Width="150" Click="showImage" Grid.Column="0" Margin="124,0,0,0">
+                        <Image  x:Name="foto"  Height="Auto" Width="Auto" VerticalAlignment="Top" HorizontalAlignment="Left" Stretch="Fill" />
+                    </k:KinectTileButton>
+                    <k:KinectTileButton   Height="Auto"    Width="150" Background="BurlyWood" x:Name="btnPlay"   Click="btnPlay_Click" Grid.Column="1" Margin="63,0,110,0"  >
+                        <Image Height="Auto" Width="Auto" Stretch="Fill" Source="imagenes/imageSelectPuzzle/play.png"  ></Image>
+                    </k:KinectTileButton>
+
+                    <cron:Crono x:Name="time"  Height="74" Grid.Column="2" Margin="86,31,0,0" HorizontalAlignment="Left" Width="162" />
+
+                    <k:KinectTileButton Height="Auto"  Width="150" Background="BurlyWood" Click="exitButton" Grid.Column="3" HorizontalAlignment="Right" >
+                        <Image Height="Auto" Width="Auto" Stretch="Fill" Source="imagenes/imageSelectPuzzle/exit.png"  ></Image>
+                    </k:KinectTileButton>
+
+                </Grid>
+
+                <puz:PuzzleType x:Name="gridMatriz" Grid.Row="1"  />
+
+                <!-- </k:KinectRegion>-->
+            </Grid>
+
+        </k:KinectRegion>
+
+    </Grid>
+</Window>

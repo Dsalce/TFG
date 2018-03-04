@@ -1,0 +1,77 @@
+﻿<Window x:Class="Supermarket.View.ShelvesLeft"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:k="http://schemas.microsoft.com/kinect/2013" 
+        xmlns:prod="clr-namespace:Supermarket.View"
+        xmlns:cron="clr-namespace:ViewCommon;assembly=WpfApplication1"
+        Title="Front"  WindowState="Maximized" Loaded="loadWindow" Background="#FFB9F59D">
+    <Grid MouseMove="finish" >
+
+        <k:KinectRegion x:Name="kinectRegion">
+            <Grid>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="110*"/>
+                    <ColumnDefinition Width="977*"/>
+                    <ColumnDefinition Width="105*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="106*"/>
+                    <RowDefinition Height="745*"/>
+                    <RowDefinition Height="118*"/>
+                </Grid.RowDefinitions>
+              
+                <Label x:Name="nameUser" Margin="0"  Content="dsalce92"/>
+
+
+
+                <k:KinectTileButton Grid.Row="0" Grid.Column="2"  Height="Auto" Width="Auto" Click="exitevent" Background="#FFB9F59D">
+                    <Image Height="Auto" Width="Auto" Stretch="Fill" Source="imagenes/exit.png"  ></Image>
+                </k:KinectTileButton>
+                <prod:BasketProduct Grid.Row="2"  HorizontalContentAlignment="Left" Margin="0"  x:Name="cesta" Width="Auto" Grid.Column="1"/>
+                <k:KinectSensorChooserUI x:Name="sensorChooserUi" Grid.Row="0" Grid.Column="1" Margin="507,10,281,0" VerticalAlignment="Top" Height="60"/>
+
+
+                <cron:Crono x:Name="time"  Height="78"  Width="162"  Grid.Column="1" Grid.RowSpan="2" HorizontalAlignment="Left" VerticalAlignment="Top" />
+                <k:KinectTileButton Grid.Row="1" Grid.Column="2"  Height="165" Width="Auto" Click="frontBookStand" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Margin="0,169,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Background="Black">
+                    <Image Height="Auto" Width="Auto" Stretch="Fill" Source="imagenes/flechaDer.png"  />
+                </k:KinectTileButton>
+               
+                <Grid x:Name="superProduct"  Grid.Row="1" Grid.Column="1"  >
+                    <Grid.Background>
+                        <ImageBrush ImageSource="imagenes/estanteria.jpg"/>
+                    </Grid.Background>
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="201*"/>
+                            <ColumnDefinition Width="215*"/>
+                            <ColumnDefinition Width="204*"/>
+
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="225*"/>
+                            <RowDefinition Height="214*"/>
+                            <RowDefinition Height="216*"/>
+                            <RowDefinition Height="90*"/>
+
+                        </Grid.RowDefinitions>
+                        <prod:Producto Margin="58,26,28,0"  Source="imagenes/Estanterias/10.png"  TagProduct="Manzana"    numProduc="10" />
+                        <prod:Producto Margin="56,26,52,0" Source="imagenes/Estanterias/11.png"  TagProduct="Platano"  Grid.Column="1" numProduc="11"/>
+                        <prod:Producto Margin="36,26,54,0" Source="imagenes/Estanterias/12.png"  TagProduct="Pera" Grid.Column="2" numProduc="12"/>
+                        <prod:Producto Margin="58,15,28,0" Source="imagenes/Estanterias/13.png"  TagProduct="Sandia" Grid.Row="1" numProduc="13" />
+                        <prod:Producto Margin="56,15,52,0" Source="imagenes/Estanterias/14.png"  TagProduct="Naranja" Grid.Column="1" Grid.Row="1" numProduc="14" />
+                        <prod:Producto Margin="40,10,52,0" Source="imagenes/Estanterias/15.png"  TagProduct="Uvas" Grid.Column="2" Grid.Row="1" numProduc="15"  />
+                        <prod:Producto Margin="58,32,28,10" Source="imagenes/Estanterias/16.png"  TagProduct="Melocoton" Grid.Row="2" numProduc="16" />
+                        <prod:Producto Margin="56,32,52,10" Source="imagenes/Estanterias/17.png"  TagProduct="Piña" Grid.Column="1" Grid.Row="2"   numProduc="17" />
+                        <prod:Producto Margin="40,32,50,10" Source="imagenes/Estanterias/18.png"  TagProduct="Fresa" Grid.Column="2" Grid.Row="2"  numProduc="18" />
+                    </Grid>
+
+
+
+                </Grid>
+
+            </Grid>
+        </k:KinectRegion>
+    </Grid>
+</Window>

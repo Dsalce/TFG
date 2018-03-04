@@ -1,0 +1,310 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F7E4860E-72B5-4581-A2E8-B9D2473C1867}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Supermarket</RootNamespace>
+    <AssemblyName>Supermarket</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Kinect.Toolkit">
+      <HintPath>C:\Program Files\Microsoft SDKs\Kinect\Developer Toolkit v1.8.0\Assemblies\Microsoft.Kinect.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Kinect.Toolkit.Controls">
+      <HintPath>C:\Program Files\Microsoft SDKs\Kinect\Developer Toolkit v1.8.0\Assemblies\Microsoft.Kinect.Toolkit.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Kinect.Toolkit.Interaction">
+      <HintPath>C:\Program Files\Microsoft SDKs\Kinect\Developer Toolkit v1.8.0\Assemblies\Microsoft.Kinect.Toolkit.Interaction.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Controller\ControllerBookStand.cs" />
+    <Compile Include="Model\ShoppingListModel.cs" />
+    <Compile Include="View\BasketProduct.xaml.cs">
+      <DependentUpon>BasketProduct.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ShelvesLeft.xaml.cs">
+      <DependentUpon>ShelvesLeft.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ShelvesRight.xaml.cs">
+      <DependentUpon>ShelvesRight.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\HelpWindowSuper.xaml.cs">
+      <DependentUpon>HelpWindowSuper.xaml</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="View\Producto.xaml.cs">
+      <DependentUpon>Producto.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\SelecGameSuper.xaml.cs">
+      <DependentUpon>SelecGameSuper.xaml</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Page Include="View\BasketProduct.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ShelvesLeft.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\ShelvesRight.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\ShelvesFront.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="View\ShelvesFront.xaml.cs">
+      <DependentUpon>ShelvesFront.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="View\HelpWindowSuper.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Page>
+    <Page Include="View\Producto.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\SelecGameSuper.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Page>
+    <Page Include="View\ShoppingList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Imagenes\exit.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Imagenes\estanteria.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Imagenes\flechaDer.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Imagenes\flechaIzq.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\KinectToolsBox\KinectToolsBox.csproj">
+      <Project>{2838fb88-59a3-4315-9721-f2705a4ffe66}</Project>
+      <Name>KinectToolsBox</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ViewCommon\ViewCommon.csproj">
+      <Project>{748d353d-adc4-47eb-8808-b69e93bd3249}</Project>
+      <Name>ViewCommon</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Imagenes\Estanterias\1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Imagenes\ImageSelectPuzzle\expand.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Imagenes\ImageSelectPuzzle\help.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Imagenes\ImageSelectPuzzle\play.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Imagenes\ImageSelectPuzzle\shopingBig.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Imagenes\ImageSelectPuzzle\shopingSmall.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Imagenes\ImageSelectPuzzle\shopingMedium.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Imagenes\Estanterias\2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="View\ShoppingList.xaml.cs">
+      <DependentUpon>ShoppingList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\VideoHelp\helpKinect.mp4">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Imagenes\Estanterias\3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Imagenes\Estanterias\4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Imagenes\Estanterias\5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Imagenes\Estanterias\6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Imagenes\Estanterias\7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Imagenes\Estanterias\8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Imagenes\Estanterias\9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Imagenes\Estanterias\10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Imagenes\Estanterias\11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Imagenes\Estanterias\12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Imagenes\Estanterias\13.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Imagenes\Estanterias\14.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Imagenes\Estanterias\15.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Imagenes\Estanterias\16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Imagenes\Estanterias\17.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Imagenes\Estanterias\18.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Imagenes\Estanterias\19.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Imagenes\Estanterias\20.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Imagenes\Estanterias\21.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Imagenes\Estanterias\22.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Imagenes\Estanterias\23.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Imagenes\Estanterias\24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Imagenes\Estanterias\25.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Imagenes\Estanterias\26.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Imagenes\Estanterias\27.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
